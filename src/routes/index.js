@@ -4,10 +4,7 @@ const limiter = require("../config/apiLimiter.confic");
 const jwt = require('../_helper/jwt');
 
 
-
-
 router.use(jwt())
-
 
 
 router.use("/createuserstbl", controllers.createUsersTbl);
