@@ -164,6 +164,19 @@
           });
     
        }
+
+
+       getAllStrategies(strategy_name){
+        return this.query(`SELECT * FROM strategy_name_tbl WHERE strategy_name ="${strategy_name}" `)
+      }
+       
+     updateStategyById(strategy_name, description, setup, database_name, host, port, user, password, strategy_name_id ){
+       return this.query(`UPDATE strategy_name_tbl SET strategy_name="${strategy_name}", description="${description}", setup="${setup}", database_name="${database_name}", host="${host}", port="${port}", user="${user}" , password="${password}"   WHERE strategy_name_id=${strategy_name_id}`)
+     } 
+   
+     deleteById(strategy_name_id){
+       return this.query(`DELETE FROM strategy_name_tbl WHERE strategy_name_id=${strategy_name_id} `)
+     }
         
     
     
