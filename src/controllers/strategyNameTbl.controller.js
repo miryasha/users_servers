@@ -25,7 +25,7 @@ function createing (req, res) {
     //const encryptPassword = CryptoJS.AES.encrypt( password , process.env.PASS_HASH_DATABASE ).toString(); 
     
 
-    model.strategyNameTbl.create()
+    model.resultApi.create()
     .then(()=>{
         model.strategyNameTbl.insert({strategy_name, description, setup, database_name: database_name  , 
             host: host, port, user, password:password})
@@ -48,7 +48,7 @@ function createing (req, res) {
  function getAll (req, res) {   
     const { strategy } =  req.params; 
     
-    model.strategyNameTbl.getAllStrategies(strategy)
+    model.resultApi.getAllStrategies(strategy)
     .then((strategy) => {
         res.json(strategy)
         res.status(201)
@@ -70,7 +70,7 @@ function createing (req, res) {
 
     const { strategy_name, description, setup, database_name, host, port, user, password, strategy_name_id } =  req.body;   
    
-    model.strategyNameTbl.updateStategyById( strategy_name, description, setup, database_name, host, port, user, password, strategy_name_id)
+    model.resultApi.updateStategyById( strategy_name, description, setup, database_name, host, port, user, password, strategy_name_id)
     .then(() => {
         res.send( {message: "Your data updated successfully" } )
         res.status(201)
@@ -93,7 +93,7 @@ function createing (req, res) {
     const {strategy_name_id } =  req.body;
     
      
-    model.strategyNameTbl.deleteById(strategy_name_id)
+    model.resultApi.deleteById(strategy_name_id)
     .then(() => {
         res.send( {message: "Your data deleted " } )
         res.status(201)

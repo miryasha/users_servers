@@ -6,7 +6,7 @@ const jwt = require('../_helper/jwt');
 
 router.use(jwt())
 
-
+router.use("/strategynametbl", controllers.strategyNameTbl);
 router.use("/createuserstbl", controllers.createUsersTbl);
 
 //Login routes

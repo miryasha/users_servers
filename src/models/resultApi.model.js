@@ -11,7 +11,7 @@
     
     class TickersForCalling extends Base {
     
-        create(strategy_name){
+        create(){
             return this.query(`
             
             CREATE TABLE IF NOT EXISTS strategy_name_tbl
