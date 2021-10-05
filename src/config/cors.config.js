@@ -1,6 +1,6 @@
 const corsOptions =
 {
-    origin: "http://example1.com",
+    origin: "*",
     //methods: "HEAD,PUT,PATCH,POST,DELETE",
     //preflightContinue: false,
     //optionsSuccessStatus: 204
