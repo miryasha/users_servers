@@ -166,8 +166,9 @@
        }
 
 
-       getAllStrategies(strategy_name){
-        return this.query(`SELECT * FROM strategy_name_tbl WHERE strategy_name ="${strategy_name}" `)
+      
+      getAllStrategies(strategy_name){
+        return this.query(`SELECT * FROM strategy_name_tbl`)
       }
        
      updateStategyById(strategy_name, description, setup, database_name, host, port, user, password, strategy_name_id ){

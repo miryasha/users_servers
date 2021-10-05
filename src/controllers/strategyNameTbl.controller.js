@@ -6,7 +6,7 @@ require('dotenv').config();
 //time_frame_tbl
 //======
 router.post('/create' , createing)
-router.get('/strategy/:strategy' , getAll)
+router.get('/strategy', getAll)
 router.put('/strategy/:strategy' , updating)
 router.delete('/strategy/:strategy' , deleting)
 
@@ -46,9 +46,9 @@ function createing (req, res) {
  }
 
  function getAll (req, res) {   
-    const { strategy } =  req.params; 
     
-    model.resultApi.getAllStrategies(strategy)
+    
+    model.resultApi.getAllStrategies()
     .then((strategy) => {
         res.json(strategy)
         res.status(201)
