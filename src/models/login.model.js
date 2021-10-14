@@ -8,6 +8,10 @@ class Login  extends Base{
     findUser(username, password){
                        
             return this.findWithUser(username)
+            .catch(err => {
+                console.log(err);
+               
+             })
             .then(d => {            
                 
                 const mapUser = d.map(u => u.username);
